@@ -1,0 +1,46 @@
+<div style="margin-top: 0px;" class="panel panel-primary">
+  <div >Hero's List</div>
+  <div >
+
+  
+
+    <div >
+
+
+    <div >
+      <input  [(ngModel)]="motCle" aria-label="Search" aria-label="Search">
+      <button  (click)="chercher()">Search</button>
+      
+      <button  type="button" routerLink="/new-hero" >Add</button>
+
+    </div>
+
+
+   <table >
+      <tr>
+        <th>ID</th>
+        <th>Name</th>
+      </tr>
+      <tr *ngFor="let hero of pageHeroes?.content">
+        <td>{{hero.id}}</td>
+        <td>{{hero.name}}</td>
+       
+
+        <td>
+           <button style="color: #4CAF50;" (click)="updateHero(hero.id)" >Edit</button>
+        </td>
+        <td>
+           <button style="color: red;" (click)="deleteHero(hero)" >Delete</button>
+        </td>
+      </tr>
+    </table>
+    <div style="float: left" class="container">
+      <ul  style="background-color: transparent;" class="nav nav-pills">
+        <li  [ngClass]="{'active':i==currentpage}" *ngFor="let p of pages; let i=index">
+          <a style="color: blue;" class="clickable" (click)="gotoPage(i)">{{i}}</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</div>
+</div>

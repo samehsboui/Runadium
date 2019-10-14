@@ -1,0 +1,7 @@
+<div class="form-group" >
+    <label for="name" class="control-label">Name</label>
+    <input name="name" id="name" type="text" #name="ngModel"  class="form-control" [(ngModel)]="hero.name"/>
+
+  </div>
+
+  <button style="float: right; margin-right: 10px;" class="btn-primary" (click)="saveHero()">Save</button>
